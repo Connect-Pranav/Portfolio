@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Projects &mdash; Pranav Kumar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#071a2e;--bg2:#0d2035;--card:#0d1e30;--green:#39e600;--green2:#2fc200;--border:rgba(57,230,0,0.12);--text:#fff;--text2:#a8c4d8;--text3:#6a8fa8;--nav-h:62px}
+html{scroll-behavior:smooth}
+body{opacity:1;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;letter-spacing:-0.02em}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);padding:0 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(7,26,46,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nlogo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none}
+.nlogo span{color:var(--green)}
+.nlinks{list-style:none;display:flex;align-items:center;gap:2px}
+.nlinks a{color:var(--text2);text-decoration:none;font-size:0.83rem;font-weight:500;padding:6px 10px;border-radius:6px;transition:color .2s,background .2s}
+.nlinks a:hover,.nlinks a.active{color:var(--green);background:rgba(57,230,0,0.07)}
+.ncta{background:var(--green)!important;color:#000!important;font-weight:700!important;border-radius:6px!important;padding:6px 14px!important;font-size:0.8rem!important}
+.nresume{background:rgba(57,230,0,0.1)!important;color:var(--green)!important;border:1px solid rgba(57,230,0,0.25)!important;border-radius:6px!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(7,26,46,0.98);backdrop-filter:blur(20px);padding:20px 24px 28px;flex-direction:column;gap:4px;border-bottom:1px solid var(--border);z-index:999}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--text2);text-decoration:none;font-size:0.95rem;font-weight:500;padding:10px 12px;border-radius:8px;transition:all .2s}
+.mobile-menu a:hover,.mobile-menu a.active{background:rgba(57,230,0,0.08);color:var(--green)}
+body>section{padding-top:var(--nav-h)}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:8px;font-weight:600;font-size:0.85rem;text-decoration:none;cursor:pointer;border:none;transition:all .22s;font-family:'Plus Jakarta Sans',sans-serif}
+.btn-primary{background:var(--green);color:#000}
+.btn-primary:hover{background:var(--green2);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--green);border:1px solid rgba(57,230,0,0.4)}
+.btn-outline:hover{background:rgba(57,230,0,0.08);transform:translateY(-1px)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s}
+.rv.vis{opacity:1;transform:none}
+.rib-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
+.rib{display:flex;animation:ribscroll 30s linear infinite;width:max-content}
+.rib:hover{animation-play-state:paused}
+@keyframes ribscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.rib-item{display:flex;align-items:center;gap:10px;padding:11px 28px;border-right:1px solid var(--border);white-space:nowrap;font-size:0.78rem;color:var(--text2);font-weight:500}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:0.8rem;color:var(--text3)}
+.fl{display:flex;gap:20px;flex-wrap:wrap}
+.fl a{color:var(--text3);text-decoration:none;font-size:0.8rem;transition:color .2s}
+.fl a:hover{color:var(--green)}
+.page-section{padding:52px 40px;max-width:1280px;margin:0 auto}
+.sec-label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:10px;display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif}
+.sec-label::before{content:'';width:28px;height:1px;background:var(--green)}
+h2.section-title{font-size:2.2rem;margin-bottom:8px;line-height:1.15}
+p.section-sub{color:var(--text2);font-size:0.95rem;max-width:600px;margin-bottom:36px}
+/* PROJECT CARDS */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:0;transition:all .28s;display:flex;flex-direction:column;overflow:hidden}
+.pcard:hover{border-color:rgba(57,230,0,0.35);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.4)}
+.pcard-header{padding:22px 24px 16px;border-bottom:1px solid var(--border)}
+.pcard-type{font-size:0.67rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--green);font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:8px}
+.pcard-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;line-height:1.35;margin-bottom:6px}
+.pcard-org{font-size:0.75rem;color:var(--text3);font-weight:500}
+.pcard-body{padding:18px 24px;flex:1;display:flex;flex-direction:column;gap:12px}
+.pcard-desc{font-size:0.83rem;color:var(--text2);line-height:1.68;flex:1}
+.pcard-tags{display:flex;flex-wrap:wrap;gap:6px}
+.ptag{background:rgba(57,230,0,0.07);border:1px solid rgba(57,230,0,0.15);color:var(--text2);border-radius:20px;padding:3px 10px;font-size:0.7rem;font-weight:500}
+.pcard-mets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px 24px;background:rgba(57,230,0,0.03);border-top:1px solid var(--border)}
+.pm{text-align:center}
+.pm-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:800;color:var(--green)}
+.pm-lbl{font-size:0.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.07em;margin-top:2px}
+.pcard-foot{padding:14px 24px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border)}
+.pcard-date{font-size:0.72rem;color:var(--text3)}
+/* FEATURED card - full width */
+.pcard.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
+.pcard.featured .pcard-header{border-bottom:none;border-right:1px solid var(--border);padding:28px 28px 28px 28px}
+.pcard.featured .pcard-body{padding:28px;gap:16px}
+.pcard.featured .pcard-title{font-size:1.15rem}
+.pcard.featured .pcard-desc{font-size:0.88rem}
+@media(max-width:900px){
+  nav{padding:0 20px}.nlinks{display:none}.hamburger{display:flex}
+  .page-section{padding:36px 20px}
+  .proj-grid{grid-template-columns:1fr}
+  .pcard.featured{grid-column:1;display:flex;flex-direction:column}
+  .pcard.featured .pcard-header{border-right:none;border-bottom:1px solid var(--border)}
+  footer{padding:20px;flex-direction:column;gap:12px;text-align:center}.fl{justify-content:center}
+}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nlogo">Pranav<span>.</span></a>
+  <ul class="nlinks">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="impact.html">Impact</a></li><li><a href="awards.html">Awards</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li><li><a href="tools.html">Tools</a></li>
+    <li><a href="resume.html" class="nresume">Resume</a></li><li><a href="workx.html">WorkX</a></li>
+    <li><a href="mailto:connect_pranav@outlook.com" class="ncta">Contact &#8599;</a></li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="impact.html">Impact</a>
+  <a href="awards.html">Awards</a><a href="projects.html" class="active">Projects</a><a href="tools.html">Tools</a>
+  <a href="resume.html">Resume</a><a href="workx.html">WorkX</a>
+  <a href="mailto:connect_pranav@outlook.com" style="background:linear-gradient(135deg,#39e600,#2fc200);color:#000;font-weight:700;border-radius:8px;text-align:center;margin-top:6px">Contact</a>
+</div>
+<div class="rib-wrap"><div class="rib"><div class="rib-item"><span>📊</span><span>Salesforce</span></div><div class="rib-item"><span>⚡</span><span>HubSpot</span></div><div class="rib-item"><span>📈</span><span>Power BI</span></div><div class="rib-item"><span>📋</span><span>Zoho CRM</span></div><div class="rib-item"><span>💬</span><span>Slack</span></div><div class="rib-item"><span>📊</span><span>MS Excel</span></div><div class="rib-item"><span>🤖</span><span>ChatGPT</span></div><div class="rib-item"><span>🎯</span><span>LinkedIn Sales Nav</span></div><div class="rib-item"><span>📧</span><span>Outlook</span></div><div class="rib-item"><span>🔍</span><span>Google Analytics</span></div><div class="rib-item"><span>📑</span><span>Notion</span></div><div class="rib-item"><span>⚙️</span><span>Freshdesk</span></div><div class="rib-item"><span>📊</span><span>Salesforce</span></div><div class="rib-item"><span>⚡</span><span>HubSpot</span></div><div class="rib-item"><span>📈</span><span>Power BI</span></div><div class="rib-item"><span>📋</span><span>Zoho CRM</span></div><div class="rib-item"><span>💬</span><span>Slack</span></div><div class="rib-item"><span>📊</span><span>MS Excel</span></div><div class="rib-item"><span>🤖</span><span>ChatGPT</span></div><div class="rib-item"><span>🎯</span><span>LinkedIn Sales Nav</span></div><div class="rib-item"><span>📧</span><span>Outlook</span></div><div class="rib-item"><span>🔍</span><span>Google Analytics</span></div><div class="rib-item"><span>📑</span><span>Notion</span></div><div class="rib-item"><span>⚙️</span><span>Freshdesk</span></div></div></div>
+
+<section class="page-section">
+  <div class="sec-label rv">Work That Matters</div>
+  <h2 class="section-title rv" style="transition-delay:.05s">PROJECTS &amp; <span style="color:var(--green)">CASE STUDIES</span></h2>
+  <p class="section-sub rv" style="transition-delay:.1s">Strategic initiatives, transformation blueprints, and research that created measurable business impact — across IndiaMART, Justdial, and independent strategic work.</p>
+  <div class="proj-grid"><div class="pcard featured rv" style="transition-delay:0.00s">
+  <div class="pcard-header">
+    <div class="pcard-type">GTM Blueprint · Strategy Deck</div>
+    <div class="pcard-title">EC Vertical – Revenue Acceleration Blueprint</div>
+    <div class="pcard-org">IndiaMART · Program Manager Proposal</div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-desc">A comprehensive revenue architecture blueprint for IndiaMART's EC Vertical — built to solve fragmented funnel governance, high acquisition costs, and limited pipeline visibility. Covers funnel leakage analysis (12,000 leads → 180 conversions), a weekly KPI governance framework, channel expansion model, AI-driven lead prioritisation, and a 90-day execution roadmap.</div>
+    <div class="pcard-tags"><span class="ptag">Revenue Ops</span><span class="ptag">Funnel Governance</span><span class="ptag">AI Pipeline</span><span class="ptag">GTM Strategy</span><span class="ptag">Channel Expansion</span><span class="ptag">KPI Dashboard</span></div>
+  </div>
+  <div class="pcard-mets"><div class="pm"><div class="pm-num">+8–15%</div><div class="pm-lbl">Revenue Uplift</div></div><div class="pm"><div class="pm-num">3–5%</div><div class="pm-lbl">Churn Reduction</div></div><div class="pm"><div class="pm-num">10%</div><div class="pm-lbl">Productivity Gain</div></div></div>
+  <div class="pcard-foot">
+    <span class="pcard-date">2025 &middot; <span style="color:var(--green);font-size:0.7rem;font-weight:600">&#128196; PPTX Deck</span></span>
+  </div>
+</div><div class="pcard rv" style="transition-delay:0.06s">
+  <div class="pcard-header">
+    <div class="pcard-type">Case Study · Strategy</div>
+    <div class="pcard-title">E-Waste as a Product Problem — Not a CSR Topic</div>
+    <div class="pcard-org">Independent Research · Dec 2025</div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-desc">An original case study exploring how mid-sized electronics companies can turn e-waste compliance into a competitive advantage. Covers the "Circular Product System" — take-back as a product feature, refurbished SKU lines, EPR reporting dashboards, and a 90-day to 12-month execution plan. Published with projected outcomes: 30–40% leakage reduction, 6–10% incremental revenue from refurb.</div>
+    <div class="pcard-tags"><span class="ptag">Product Strategy</span><span class="ptag">Circular Economy</span><span class="ptag">EPR Compliance</span><span class="ptag">GTM</span><span class="ptag">Case Study</span></div>
+  </div>
+  <div class="pcard-mets"><div class="pm"><div class="pm-num">30–40%</div><div class="pm-lbl">Leakage Reduction</div></div><div class="pm"><div class="pm-num">6–10%</div><div class="pm-lbl">Refurb Revenue</div></div><div class="pm"><div class="pm-num">12–18%</div><div class="pm-lbl">Warranty Cost Drop</div></div></div>
+  <div class="pcard-foot">
+    <span class="pcard-date">Dec 2025 &middot; <span style="color:var(--green);font-size:0.7rem;font-weight:600">&#128196; PDF</span> <span style="color:var(--green);font-size:0.7rem;font-weight:600">&#128196; DOCX</span></span>
+  </div>
+</div><div class="pcard rv" style="transition-delay:0.12s">
+  <div class="pcard-header">
+    <div class="pcard-type">Case Study · Brand Strategy</div>
+    <div class="pcard-title">Tata Nano vs MG Comet — Why Positioning Matters More Than Price</div>
+    <div class="pcard-org">Independent Research · Dec 2025</div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-desc">A strategic case study comparing two compact cars in the Indian market — arguing that Nano failed not because of the product, but because "world's cheapest car" signalled compromise in an aspirational market. MG Comet succeeded by selling identity (urban, youthful, conscious) rather than price. A sharp lesson in how positioning shapes perception — and perception shapes demand.</div>
+    <div class="pcard-tags"><span class="ptag">Brand Positioning</span><span class="ptag">Consumer Psychology</span><span class="ptag">Market Strategy</span><span class="ptag">Case Study</span><span class="ptag">India Market</span></div>
+  </div>
+  <div class="pcard-mets"><div class="pm"><div class="pm-num">Price</div><div class="pm-lbl">≠ Prestige</div></div><div class="pm"><div class="pm-num">Identity</div><div class="pm-lbl">Drives Buy</div></div><div class="pm"><div class="pm-num">Positioning</div><div class="pm-lbl">= Demand</div></div></div>
+  <div class="pcard-foot">
+    <span class="pcard-date">Dec 2025 &middot; <span style="color:var(--green);font-size:0.7rem;font-weight:600">&#128196; PDF</span> <span style="color:var(--green);font-size:0.7rem;font-weight:600">&#128196; DOCX</span></span>
+  </div>
+</div><div class="pcard rv" style="transition-delay:0.18s">
+  <div class="pcard-header">
+    <div class="pcard-type">Strategic Presentation · Retail</div>
+    <div class="pcard-title">Walmart Strategic Analysis</div>
+    <div class="pcard-org">Academic / Strategic Research</div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-desc">A 16-slide strategic presentation analysing Walmart's business model, competitive positioning, supply chain excellence, and omnichannel strategy. Covers operational leverage, pricing strategy, technology investments, and global expansion playbook.</div>
+    <div class="pcard-tags"><span class="ptag">Retail Strategy</span><span class="ptag">Supply Chain</span><span class="ptag">Omnichannel</span><span class="ptag">Competitive Analysis</span><span class="ptag">PPTX</span></div>
+  </div>
+  <div class="pcard-mets"><div class="pm"><div class="pm-num">16</div><div class="pm-lbl">Slides</div></div><div class="pm"><div class="pm-num">Global</div><div class="pm-lbl">Analysis</div></div><div class="pm"><div class="pm-num">Strategy</div><div class="pm-lbl">Framework</div></div></div>
+  <div class="pcard-foot">
+    <span class="pcard-date">2025 &middot; <span style="color:var(--green);font-size:0.7rem;font-weight:600">&#128196; PPT Deck</span></span>
+  </div>
+</div><div class="pcard rv" style="transition-delay:0.24s">
+  <div class="pcard-header">
+    <div class="pcard-type">GTM Case Study · B2B SaaS</div>
+    <div class="pcard-title">GTM Transformation — IndiaMART Bengaluru</div>
+    <div class="pcard-org">IndiaMART · 2022–Present</div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-desc">Complete GTM architecture overhaul for IndiaMART's Bengaluru branch. Rebuilt pipeline stages, introduced Power BI dashboards, and redesigned the manager coaching cadence. Achieved 114% target for 6 consecutive months. Led 30+ executives and 5 direct managers.</div>
+    <div class="pcard-tags"><span class="ptag">GTM</span><span class="ptag">Revenue Ops</span><span class="ptag">Power BI</span><span class="ptag">Team Leadership</span><span class="ptag">Pipeline Design</span></div>
+  </div>
+  <div class="pcard-mets"><div class="pm"><div class="pm-num">114%</div><div class="pm-lbl">Target</div></div><div class="pm"><div class="pm-num">₹80L</div><div class="pm-lbl">P&L/mo</div></div><div class="pm"><div class="pm-num">30+</div><div class="pm-lbl">Team</div></div></div>
+  <div class="pcard-foot">
+    <span class="pcard-date">2022–Present</span>
+  </div>
+</div><div class="pcard rv" style="transition-delay:0.30s">
+  <div class="pcard-header">
+    <div class="pcard-type">Sales Playbook · B2B</div>
+    <div class="pcard-title">Sales Playbook Redesign — Justdial</div>
+    <div class="pcard-org">Justdial · 2019–2022</div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-desc">Authored and deployed a comprehensive B2B sales playbook covering prospecting, objection handling, pipeline management, and closing. Improved team conversion from 18% to 53%. Adopted as standard across 3 branches. Earned Certificate of Excellence Q3 FY 2022–23.</div>
+    <div class="pcard-tags"><span class="ptag">Sales Playbook</span><span class="ptag">Conversion Optimisation</span><span class="ptag">Training</span><span class="ptag">B2B Sales</span></div>
+  </div>
+  <div class="pcard-mets"><div class="pm"><div class="pm-num">35%</div><div class="pm-lbl">Conv. Lift</div></div><div class="pm"><div class="pm-num">18→53%</div><div class="pm-lbl">Conversion</div></div><div class="pm"><div class="pm-num">3</div><div class="pm-lbl">Branches</div></div></div>
+  <div class="pcard-foot">
+    <span class="pcard-date">2019–2022</span>
+  </div>
+</div></div>
+</section>
+
+<footer>
+  <div>Pranav Kumar &copy; 2026 &middot; Business Growth Leader &middot; Bengaluru</div>
+  <div class="fl">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="impact.html">Impact</a>
+    <a href="awards.html">Awards</a><a href="projects.html">Projects</a><a href="tools.html">Tools</a>
+    <a href="resume.html">Resume</a><a href="workx.html">WorkX</a>
+    <a href="mailto:connect_pranav@outlook.com">Contact</a>
+  </div>
+</footer>
+<script>
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.07});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+var ham=document.getElementById('ham'),mm=document.getElementById('mm');
+if(ham){ham.addEventListener('click',function(){ham.classList.toggle('open');mm.classList.toggle('open')});
+document.querySelectorAll('#mm a').forEach(function(a){a.addEventListener('click',function(){ham.classList.remove('open');mm.classList.remove('open')})});}
+</script>
+</body>
+</html>
